@@ -1,21 +1,53 @@
-import logo from '../assets/holberton-logo.jpg';
-import { getFooterCopy, getFullYear } from '../utils/util';
-import './Login.css';
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import { StyleSheet, css, } from 'aphrodite';
 
-function Login() {
-  return (
-    <React.Fragment>
-      <div className="App-body">
-        <p>Login to access the full dashboard</p>
-        <label htmlFor="email">Email: </label>
-        <input type="email" name="email" id="email"/>
-        <label htmlFor="password">Password: </label>
-        <input type="password" name="password" id="password"/>
-        <button type="button">OK</button>
-      </div>
-    </React.Fragment>
-  );
-}
+class Login extends Component {
+  render() {
+    return (
+      <Fragment>
+        <div className={css(styles.loginBody)}>
+          <p>
+            Login to access the full dashboard
+          </p>
+          <div className={css(styles.inputContainer)}>
+            <label htmlFor="email">Email: </label>
+            <input className={css(styles.input)} type="email" id="email" name="email" />
+          </div>
+          <div className={css(styles.inputContainer)}>
+            <label htmlFor="password">Password: </label>
+            <input className={css(styles.input)} type="password" id="password" name="password" />
+          </div>
+          <div className={css(styles.inputContainer)}>
+            <button>OK</button>
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
+};
+
+const styles = StyleSheet.create({
+  loginBody: {
+    padding: '36px 24px',
+  },
+  input: {
+    margin: '0 16px 0 8px',
+  },
+  inputContainer: {
+    display: 'inline',
+    '@media (max-width: 900px)': {
+      display: 'block',
+    },
+  },
+});
+
+// const styles = StyleSheet.create({
+// 	loginBody: {
+// 		padding: '36px 24px',
+// 	},
+// 	input: {
+// 		margin: '0 16px 0 8px',
+// 	},
+// });
 
 export default Login;

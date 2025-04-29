@@ -1,36 +1,37 @@
-import React from 'react';
-import HolbertonLogo from './HolbertonLogo.png';
+import React from "react";
+import HolbertonLogo from "./HolbertonLogo.png";
 import './App.css';
-import { getFooterCopy, getFullYear, getFulYear } from './utils';
+import { getFullYear, getFooterCopy } from './utils'
 
 function App() {
   return (
-    <div className="App">
-      {/* Header */}
-      <header className="App-header">
-        <img src={HolbertonLogo} alt="logo" />
+    <>
+      <div className="App-header">
+        <img src={HolbertonLogo} alt="Holberton Logo" />
         <h1>School dashboard</h1>
-      </header>
-
-      {/* Body */}
+      </div>
       <div className="App-body">
         <p>Login to access the full dashboard</p>
-        {/* Email */}
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" />
-
-        {/* Password */}
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" />
-
-        <button type="button">OK</button>
+        <form class="form">
+          <ul className="ul">
+            <li className="li">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" />
+            </li>
+            <li className="li">
+          <label for="Password">Password:</label>
+          <input type="password" id="Password" name="Password" />
+            </li>
+            <li className="li">
+          <button type="submit">OK</button>
+          </li>
+          </ul>
+        </form>
       </div>
-
-      {/* Footer */}
       <div className="App-footer">
-        <p>Copyright {getFullYear} - {getFooterCopy(true)}</p>
+        <p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
       </div>
-    </div>
+    </>
   );
 }
 
